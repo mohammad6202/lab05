@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab05/Screens/Login.dart';
 import 'package:lab05/models/urlModel.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ionicons/ionicons.dart';
@@ -17,22 +18,31 @@ class _StoreState extends State<Store> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          centerTitle: true,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.black,
-          title: Text("Store Home"),
+          backgroundColor: Colors.white,
+          title:
+              Image(height: 100, width: 400, image: AssetImage("images/s.png")),
           bottom: TabBar(tabs: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Ionicons.phone_portrait_outline),
+              icon: Icon(
+                Ionicons.phone_portrait_outline,
+                color: Colors.black,
+              ),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Ionicons.game_controller_outline),
+              icon: Icon(
+                Ionicons.game_controller_outline,
+                color: Colors.black,
+              ),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.contact_support_outlined),
+              icon: Icon(
+                Icons.contact_support_outlined,
+                color: Colors.black,
+              ),
             )
           ]),
         ),
@@ -53,9 +63,7 @@ class _StoreState extends State<Store> {
                 SizedBox(
                   height: 10,
                 ),
-                const Image(
-                    image: NetworkImage(
-                        "https://images.macrumors.com/t/418_COGCwYQe4n_PIiF6hT_quKo=/2531x/article-new/2022/05/iPhone-14-Pro-Lineup-Feature-Purple.jpg")),
+                const Image(image: AssetImage("images/iPhone14.jpg")),
                 ListTile(
                   leading: const Icon(
                     Icons.add,
@@ -67,9 +75,7 @@ class _StoreState extends State<Store> {
                   ),
                   subtitle: const Text("999 USD"),
                 ),
-                const Image(
-                    image: NetworkImage(
-                        "https://cdn.dxomark.com/wp-content/uploads/medias/post-106688/Samsung-Galaxy-S22-Ultra-featured-image-packshot-review-Recovered.jpg")),
+                const Image(image: AssetImage("images/Samsung.jpg")),
                 ListTile(
                   leading: const Icon(
                     Icons.add,
@@ -81,9 +87,7 @@ class _StoreState extends State<Store> {
                   ),
                   subtitle: const Text("450 USD"),
                 ),
-                const Image(
-                    image: NetworkImage(
-                        "https://images.macrumors.com/t/JbrbA6Pd9LXqsiy6ioZ2ank997I=/1600x0/article-new/2021/10/Apple-Watch-Series-6-vs-7.jpg")),
+                const Image(image: AssetImage("images/Apple.jpg")),
                 ListTile(
                   leading: const Icon(
                     Icons.add,
@@ -95,9 +99,7 @@ class _StoreState extends State<Store> {
                   ),
                   subtitle: const Text("178 USD"),
                 ),
-                const Image(
-                    image: NetworkImage(
-                        "https://future-news.net/wp-content/uploads/2022/08/Samsung-Galaxy-Buds-2-Pro-%D9%88-Galaxy-Buds-2-%D9%85%D8%A7.jpg")),
+                const Image(image: AssetImage("images/Buds.jpg")),
                 ListTile(
                   leading: const Icon(
                     Icons.add,
@@ -118,7 +120,7 @@ class _StoreState extends State<Store> {
               physics: BouncingScrollPhysics(),
               children: [
                 Text(
-                  "Games Platforms",
+                  "Games and Console",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -128,9 +130,7 @@ class _StoreState extends State<Store> {
                 SizedBox(
                   height: 10,
                 ),
-                const Image(
-                    image: NetworkImage(
-                        "https://assets-prd.ignimgs.com/2022/03/29/ps5-digital-stock-at-amazon-this-week-1648560918205.png")),
+                const Image(image: AssetImage("images/ps5.png")),
                 ListTile(
                   leading: const Icon(
                     Icons.add,
@@ -141,9 +141,7 @@ class _StoreState extends State<Store> {
                   ),
                   subtitle: Text("499 USD"),
                 ),
-                Image(
-                    image: NetworkImage(
-                        "https://assets-prd.ignimgs.com/2022/02/24/ps5-controller-colors-1645714357996.png?width=1280")),
+                Image(image: AssetImage("images/controller.png")),
                 ListTile(
                   leading: Icon(
                     Icons.add,
@@ -154,22 +152,18 @@ class _StoreState extends State<Store> {
                   ),
                   subtitle: Text("120 USD"),
                 ),
-                Image(
-                    image: NetworkImage(
-                        "https://www.psfanatic.com/wp-content/uploads/2020/09/PS5-launch-and-2020-games.jpg")),
+                Image(image: AssetImage("images/elden.png")),
                 ListTile(
                   leading: Icon(
                     Icons.add,
                     color: Color.fromARGB(255, 2, 19, 71),
                   ),
                   title: Text(
-                    "PS5 DVD games",
+                    "PS5 Elden Ring game",
                   ),
-                  subtitle: Text("20-60 USD"),
+                  subtitle: Text("65 USD"),
                 ),
-                Image(
-                    image: NetworkImage(
-                        "https://www.howtogeek.com/wp-content/uploads/2021/12/xbox-series-x-s.jpg?height=200p&trim=2,2,2,2")),
+                Image(image: AssetImage("images/xbox.webp")),
                 ListTile(
                   leading: Icon(
                     Icons.add,
@@ -195,7 +189,7 @@ class _StoreState extends State<Store> {
                     platformSubTitle: "Foloww us on Linkedin",
                     platformTitle: "LinkedIn"),
                 Divider(
-                  height: 50,
+                  height: 30,
                 ),
                 Social(
                     myfunction: instagram,
@@ -209,9 +203,14 @@ class _StoreState extends State<Store> {
                     icon: Icon(Ionicons.home_outline),
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context,
+                          MaterialPageRoute(builder: ((context) {
+                        return Login();
+                      })));
+                    },
                     label: Text(
-                      "Go to Hompage",
+                      "Go to Home page",
                       style: TextStyle(fontSize: 20),
                     ))
               ],
