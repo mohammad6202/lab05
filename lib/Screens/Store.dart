@@ -183,6 +183,10 @@ class _StoreState extends State<Store> {
                     fit: BoxFit.cover, image: AssetImage("images/soc.jpg"))),
             child: Column(
               children: [
+                Text(
+                  "Contact us",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
                 Social(
                     myfunction: LinkedIn,
                     platformIcon: Ionicons.logo_linkedin,
