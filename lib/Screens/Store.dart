@@ -48,23 +48,28 @@ class _StoreState extends State<Store> {
         ),
         body: TabBarView(children: [
           Container(
-            color: Colors.pink[100],
+            // color: Colors.pink[100],
             child: ListView(
               physics: BouncingScrollPhysics(),
               children: [
-                Text(
-                  "Phones and Accessories",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Color.fromARGB(255, 159, 89, 3)),
-                ),
-                SizedBox(
-                  height: 10,
+                Container(
+                  color: Colors.pink[100],
+                  height: 40,
+                  child: Text(
+                    "Phones and Accessories",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Color.fromARGB(255, 159, 89, 3)),
+                  ),
                 ),
                 const Image(image: AssetImage("images/iPhone14.jpg")),
                 ListTile(
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Colors.blue,
+                  ),
                   leading: const Icon(
                     Icons.add,
                     color: Colors.blue,
@@ -77,6 +82,10 @@ class _StoreState extends State<Store> {
                 ),
                 const Image(image: AssetImage("images/Samsung.jpg")),
                 ListTile(
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Colors.blue,
+                  ),
                   leading: const Icon(
                     Icons.add,
                     color: Colors.blue,
@@ -89,6 +98,10 @@ class _StoreState extends State<Store> {
                 ),
                 const Image(image: AssetImage("images/Apple.jpg")),
                 ListTile(
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Colors.blue,
+                  ),
                   leading: const Icon(
                     Icons.add,
                     color: Colors.blue,
@@ -101,6 +114,10 @@ class _StoreState extends State<Store> {
                 ),
                 const Image(image: AssetImage("images/Buds.jpg")),
                 ListTile(
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Colors.blue,
+                  ),
                   leading: const Icon(
                     Icons.add,
                     color: Colors.blue,
@@ -115,23 +132,29 @@ class _StoreState extends State<Store> {
             ),
           ),
           Container(
-            color: Colors.blue,
+            // color: Colors.blue,
             child: ListView(
               physics: BouncingScrollPhysics(),
               children: [
-                Text(
-                  "Games and Console",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                      color: Color.fromARGB(255, 2, 19, 71)),
-                ),
-                SizedBox(
-                  height: 10,
+                Container(
+                  height: 40,
+                  color: Colors.blue,
+                  child: Text(
+                    "Games and Console",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                        color: Color.fromARGB(255, 2, 19, 71)),
+                  ),
                 ),
                 const Image(image: AssetImage("images/ps5.png")),
                 ListTile(
+                  tileColor: Colors.blue,
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Color.fromARGB(255, 2, 19, 71),
+                  ),
                   leading: const Icon(
                     Icons.add,
                     color: Color.fromARGB(255, 2, 19, 71),
@@ -143,6 +166,11 @@ class _StoreState extends State<Store> {
                 ),
                 Image(image: AssetImage("images/controller.png")),
                 ListTile(
+                  tileColor: Colors.blue,
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Color.fromARGB(255, 2, 19, 71),
+                  ),
                   leading: Icon(
                     Icons.add,
                     color: Color.fromARGB(255, 2, 19, 71),
@@ -154,6 +182,11 @@ class _StoreState extends State<Store> {
                 ),
                 Image(image: AssetImage("images/elden.png")),
                 ListTile(
+                  tileColor: Colors.blue,
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Color.fromARGB(255, 2, 19, 71),
+                  ),
                   leading: Icon(
                     Icons.add,
                     color: Color.fromARGB(255, 2, 19, 71),
@@ -165,6 +198,11 @@ class _StoreState extends State<Store> {
                 ),
                 Image(image: AssetImage("images/xbox.webp")),
                 ListTile(
+                  tileColor: Colors.blue,
+                  trailing: Icon(
+                    Ionicons.cart_outline,
+                    color: Color.fromARGB(255, 2, 19, 71),
+                  ),
                   leading: Icon(
                     Icons.add,
                     color: Color.fromARGB(255, 2, 19, 71),
