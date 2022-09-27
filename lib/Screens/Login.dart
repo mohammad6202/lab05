@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lab05/Screens/Store.dart';
+import 'package:ionicons/ionicons.dart';
+import 'package:lab05/component/dialog2.dart';
+
+import '../component/dialog.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,6 +13,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController userName = TextEditingController();
+  TextEditingController passWord = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +38,7 @@ class _LoginState extends State<Login> {
               height: 10,
             ),
             TextField(
+              controller: userName,
               enableSuggestions: true,
               autocorrect: true,
               decoration: InputDecoration(
@@ -48,6 +55,7 @@ class _LoginState extends State<Login> {
               height: 5,
             ),
             TextField(
+              controller: passWord,
               obscureText: true,
               enableSuggestions: true,
               autocorrect: true,
@@ -71,12 +79,20 @@ class _LoginState extends State<Login> {
             ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
                 onPressed: (() {
-                  setState(() {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return Store();
-                    })));
-                  });
+                  if (userName.text == "mohammadIbrahim" &&
+                      passWord.text == "7758") {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Alert();
+                        });
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Wrong();
+                        });
+                  }
                 }),
                 icon: Icon(Icons.login),
                 label: Text(

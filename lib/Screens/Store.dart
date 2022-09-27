@@ -4,6 +4,8 @@ import 'package:lab05/models/urlModel.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../component/draw.dart';
+
 class Store extends StatefulWidget {
   const Store({super.key});
 
@@ -17,11 +19,15 @@ class _StoreState extends State<Store> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        drawer: Draw(),
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
-          title:
-              Image(height: 100, width: 400, image: AssetImage("images/s.png")),
+          title: Image(
+              fit: BoxFit.fill,
+              height: 100,
+              width: 400,
+              image: AssetImage("images/s.png")),
           bottom: TabBar(tabs: [
             IconButton(
               onPressed: () {},
@@ -241,20 +247,6 @@ class _StoreState extends State<Store> {
                 Divider(
                   height: 300,
                 ),
-                ElevatedButton.icon(
-                    icon: Icon(Ionicons.home_outline),
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.black),
-                    onPressed: () {
-                      Navigator.pop(context,
-                          MaterialPageRoute(builder: ((context) {
-                        return Login();
-                      })));
-                    },
-                    label: Text(
-                      "Go to Home page",
-                      style: TextStyle(fontSize: 20),
-                    ))
               ],
             ),
           )
